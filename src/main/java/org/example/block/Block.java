@@ -4,7 +4,7 @@ import org.example.utils.BlockchainUtil;
 
 import java.security.NoSuchAlgorithmException;
 
-public class BlockObject {
+public class Block {
 
     private static int currIndex = 0;
 
@@ -13,6 +13,8 @@ public class BlockObject {
     private String previousHash;
     private String hash;
     private BlockData data;
+
+    // private int nonce;
 
     public int getIndex() {
         return index;
@@ -34,7 +36,7 @@ public class BlockObject {
         return data;
     }
 
-    public BlockObject(String previousHash, BlockData data) throws RuntimeException {
+    public Block(String previousHash, BlockData data) throws RuntimeException {
         try {
             this.index = currIndex++;
             this.timestamp = System.currentTimeMillis();

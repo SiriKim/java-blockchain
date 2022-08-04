@@ -1,22 +1,22 @@
 package org.example.chain;
 
-import org.example.block.BlockObject;
+import org.example.block.Block;
 import org.example.utils.BlockchainUtil;
 
 import java.util.Stack;
 
 public class Blockchain {
-    private static Stack<BlockObject> blockchain;
+    private static Stack<Block> blockchain;
 
     static {
         initBlockchain();
     }
 
-    public static BlockObject getLatestBlock() {
+    public static Block getLatestBlock() {
         return blockchain.peek();
     }
 
-    public static void pushNewBlock(BlockObject newBlock) {
+    public static void pushNewBlock(Block newBlock) {
         blockchain.push(newBlock);
     }
 
